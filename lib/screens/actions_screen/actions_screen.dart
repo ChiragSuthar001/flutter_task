@@ -51,10 +51,12 @@ class ActionsScreen extends StatelessWidget {
           GridItem(
             gridTitle: 'Add a Products',
             changeScreen: () {},
+            color: Colors.red,
           ),
           GridItem(
             gridTitle: 'Edit a Products',
             changeScreen: () {},
+            color: Colors.red,
           ),
         ],
       ),

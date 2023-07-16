@@ -5,9 +5,11 @@ class GridItem extends StatelessWidget {
     super.key,
     required this.gridTitle,
     required this.changeScreen,
+    this.color = Colors.green,
   });
 
   final String gridTitle;
+  final Color color;
   final void Function() changeScreen;
 
   @override
@@ -22,8 +24,8 @@ class GridItem extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
           gradient: LinearGradient(
             colors: [
-              Colors.green.withOpacity(0.55),
-              Colors.green.withOpacity(0.9),
+              color.withOpacity(0.9),
+              color.withOpacity(0.55),
             ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
