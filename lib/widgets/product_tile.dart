@@ -18,20 +18,31 @@ class ProductTile extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: Card(
         elevation: 7,
-        clipBehavior: Clip.hardEdge,
         child: InkWell(
           onTap: () => productsBloc.add(
             ProductClickedEvent(productClicked: productData),
           ),
           child: Column(
             children: [
-              Image.network(
-                productData.thumbnail,
-                fit: BoxFit.cover,
-                height: 170,
-                width: double.infinity,
-                errorBuilder: (context, error, stackTrace) =>
-                    Image.asset("assets/images/placeholder.webp"),
+              Hero(
+                tag: productData.id,
+                child: Container(
+                  clipBehavior: Clip.hardEdge,
+                  decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(15),
+                      topRight: Radius.circular(15),
+                    ),
+                  ),
+                  child: Image.network(
+                    productData.thumbnail,
+                    fit: BoxFit.cover,
+                    height: 170,
+                    width: double.infinity,
+                    errorBuilder: (context, error, stackTrace) =>
+                        Image.asset("assets/images/placeholder.webp"),
+                  ),
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.all(12.0),
