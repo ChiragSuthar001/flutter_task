@@ -33,3 +33,10 @@ class ProductSearchCategoryEvent extends ProductsEvent {
     required this.category,
   });
 }
+
+class ProductPageChangedEvent extends ProductsEvent {
+  final int pageNumber;
+  ProductPageChangedEvent({
+    required this.pageNumber,
+  });
+}

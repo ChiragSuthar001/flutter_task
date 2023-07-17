@@ -18,7 +18,7 @@ class ProductModel {
         title = json['title'],
         description = json['description'],
         price = json['price'],
-        discountPercentage = json['discountPercentage'],
+        discountPercentage = json['discountPercentage'] + 0.0,
         rating = json['rating'] + 0.00,
         stock = json['stock'],
         brand = json['brand'],

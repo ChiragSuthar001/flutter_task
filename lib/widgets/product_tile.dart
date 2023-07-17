@@ -30,6 +30,8 @@ class ProductTile extends StatelessWidget {
                 fit: BoxFit.cover,
                 height: 170,
                 width: double.infinity,
+                errorBuilder: (context, error, stackTrace) =>
+                    Image.asset("assets/images/placeholder.webp"),
               ),
               Padding(
                 padding: const EdgeInsets.all(12.0),

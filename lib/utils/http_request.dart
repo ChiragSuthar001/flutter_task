@@ -8,12 +8,17 @@ const String baseURL = "dummyjson.com";
 Future<Map<String, dynamic>> getData(
   String endpoint, {
   Map<String, dynamic>? query,
+  int pageNumber = 1,
 }) async {
   final url = Uri(
     scheme: 'https',
     host: baseURL,
     path: endpoint,
-    queryParameters: query,
+    queryParameters: {
+      "limit": '10',
+      "skip": '${(pageNumber - 1) * 10}',
+      if (query != null) ...query,
+    },
   );
 
   final response = await http.get(
